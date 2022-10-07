@@ -1,7 +1,7 @@
 
 try:
-    with open("./text.txt", "r") as file:
+    with open("text.txt", "r") as file:
         print("File found")
 
-except:
+except FileNotFoundError:
     print("File not found")
