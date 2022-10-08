@@ -1,5 +1,4 @@
 import os
-import re
 
 # The input should be .\files_traversal_task - because I have created all the files in that folder
 # If the input is just . it will work again, but it will show the files in the current folder.
@@ -11,7 +10,7 @@ for i in os.listdir(directory):
     file = os.path.join(directory, i)
 
     if os.path.isfile(file):
-        current_result = re.split('\\\\', file)
+        current_result = file.split("\\")
         file_name = current_result[-1]
         file_extension = file_name.split(".")[-1]
 
