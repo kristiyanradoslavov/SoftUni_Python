@@ -8,7 +8,7 @@ def start_spring(**kwargs):
     for key in type_dict.keys():
         type_dict[key] = sorted(type_dict[key])
 
-    sorted_dict = sorted(type_dict.items(), key=lambda x: (-len(x[1]), x[0], x[1]))
+    sorted_dict = sorted(type_dict.items(), key=lambda x: (-len(x[1]), x[0]))
 
     final_string = ""
 
