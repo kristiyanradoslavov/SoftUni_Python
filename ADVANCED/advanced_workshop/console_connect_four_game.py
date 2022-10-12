@@ -3,7 +3,7 @@ from collections import deque
 
 def print_matrix(current_matrix):
     for i in range(matrix_rows):
-        print(matrix[i])
+        print(f"[ {', '.join(str(x) for x in matrix[i])} ]")
 
 
 def check_for_win(current_matrix, player):
