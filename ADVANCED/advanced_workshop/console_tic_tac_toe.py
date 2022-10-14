@@ -42,6 +42,30 @@ def append_num(position):
         board_numeration_matrix[2][real_position - 6] = (player_symbol_information[current_player])
 
 
+def check_for_win(symbol):
+    player_wins = False
+    for row in range(3):
+        for col in range(3):
+            for i in range(len(directions)):
+                r, c = (
+                    row + directions[i][0],
+                    col + directions[i][1]
+                )
+                for iterations in range(3):
+                    if 0 <= r < 3 and 0 <= c < 3:
+                        if board_numeration_matrix[r][c] != symbol:
+                            break
+                    else:
+                        break
+                    r += directions[i][0]
+                    c += directions[i][1]
+
+                else:
+                    player_wins = True
+
+    return player_wins
+
+
 player_one = input("Player one name: ")
 player_two = input("Player two name: ")
 available_symbols = ["X", "O"]
@@ -80,8 +104,19 @@ player_symbol_information = {
     player_two: player_two_symbol
 }
 
-players = deque([player_one, player_two])
+directions = [
+    (-1, 0),
+    (1, 0),
+    (0, -1),
+    (0, 1),
+    (-1, -1),
+    (-1, 1),
+    (1, -1),
+    (1, 1)
+]
 
+players = deque([player_one, player_two])
+game_is_won = False
 while True:
     try:
         current_symbol = int(input(f"{players[0]} choose a free position [1-9]: "))
@@ -94,9 +129,14 @@ while True:
             current_player = players.popleft()
             players.append(current_player)
             append_num(current_symbol)
+            if check_for_win(player_symbol_information[current_player]):
+                game_is_won = True
 
     except ValueError:
         print("Invalid command!")
         continue
 
     print_the_board(board_numeration_matrix)
+    if game_is_won:
+        print(f"{current_player} wins the game")
+        break
