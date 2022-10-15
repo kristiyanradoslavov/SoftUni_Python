@@ -11,17 +11,14 @@ while bowls_of_ramen and customers:
     if current_ramen == current_customer:
         bowls_of_ramen.pop()
         customers.popleft()
-        continue
 
     elif current_ramen > current_customer:
         bowls_of_ramen[-1] -= current_customer
         customers.popleft()
-        continue
 
     elif current_ramen < current_customer:
         customers[0] -= current_ramen
         bowls_of_ramen.pop()
-        continue
 
 
 if not customers:
