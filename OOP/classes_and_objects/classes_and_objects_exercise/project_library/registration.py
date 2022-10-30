@@ -1,9 +1,8 @@
-from project.library import Library
-from project.user import User
+from OOP.classes_and_objects.classes_and_objects_exercise.project_library.library import Library
+from OOP.classes_and_objects.classes_and_objects_exercise.project_library.user import User
 
 
 class Registration:
-
     def add_user(self, user: User, library: Library):
         if user in library.user_records:
             return f"User with id = {user.user_id} already registered in the library!"
