@@ -1,25 +1,20 @@
-from OOP.encapsulation.encapsulation_exercise.project_football_team_generator.player import Player
-from OOP.encapsulation.encapsulation_exercise.project_football_team_generator.team import Team
+from OOP.encapsulation.encapsulation_exercise.project_restaurant.beverage.beverage import Beverage
+from OOP.encapsulation.encapsulation_exercise.project_restaurant.food.soup import Soup
+from OOP.encapsulation.encapsulation_exercise.project_restaurant import Product
 
-
-p = Player("Pall", 1, 3, 5, 7)
-
-print("Player name:", p.name)
-print("Points sprint:", p._Player__sprint)
-print("Points dribble:", p._Player__dribble)
-print("Points passing:", p._Player__passing)
-print("Points shooting:", p._Player__shooting)
-
-print("\ncalling the __str__ method")
-print(p)
-
-print("\nAbout the team")
-t = Team("Best", 10)
-print("Team name:", t._Team__name)
-print("Teams points:", t._Team__rating)
-print("Teams players:", len(t._Team__players))
-print(t.add_player(p))
-print(t.add_player(p))
-print("Teams players:", len(t._Team__players))
-print(t.remove_player("Pall"))
-print(t.remove_player("Pall"))
+product = Product("coffee", 2.5)
+print(product.__class__.__name__)
+print(product.name)
+print(product.price)
+beverage = Beverage("coffee", 2.5, 50)
+print(beverage.__class__.__name__)
+print(beverage.__class__.__bases__[0].__name__)
+print(beverage.name)
+print(beverage.price)
+print(beverage.milliliters)
+soup = Soup("fish soup", 9.90, 230)
+print(soup.__class__.__name__)
+print(soup.__class__.__bases__[0].__name__)
+print(soup.name)
+print(soup.price)
+print(soup.grams)
