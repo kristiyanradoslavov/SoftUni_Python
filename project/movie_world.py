@@ -29,6 +29,7 @@ class MovieWorld:
         current_dvd = [d for d in self.dvds if d.id == dvd_id][0]
         if current_dvd in current_customer.rented_dvds:
             return f"{current_customer.name} has already rented {current_dvd.name}"
+
         elif current_dvd.is_rented:
             return "DVD is already rented"
 
@@ -36,9 +37,31 @@ class MovieWorld:
             return f"{current_customer.name} should be at least {current_dvd.age_restriction} to rent this movie"
 
         else:
-            current_dvd.is_rented = True        # should I remove it from here ?
+            current_dvd.is_rented = True
             current_customer.rented_dvds.append(current_dvd)
+            # self.dvds.remove(current_dvd)       # should I remove it from here ?
             return f"{current_customer.name} has successfully rented {current_dvd.name}"
+
+    def return_dvd(self, customer_id, dvd_id):
+        current_customer = [c for c in self.customers if c.id == customer_id][0]
+        current_dvd = [d for d in self.dvds if d.id == dvd_id][0]
+        if current_dvd in current_customer.rented_dvds:
+            current_customer.rented_dvds.remove(current_dvd)
+            # self.dvds.append(current_dvd)
+            return f"{current_customer.name} has successfully rented {current_dvd.name}"
+
+        else:
+            return f"{current_customer.name} does not have that DVD"
+
+    def __repr__(self):
+        result = []
+        for current_customer in self.customers:
+            result.append(str(current_customer))
+
+        for current_dvd in self.dvds:
+            result.append(str(current_dvd))
+
+        return "\n".join(result)
 
 
 c1 = Customer("John", 16, 1)
@@ -58,3 +81,6 @@ movie_world.add_dvd(d2)
 print(movie_world.rent_dvd(1, 1))
 print(movie_world.rent_dvd(2, 1))
 print(movie_world.rent_dvd(1, 2))
+
+print(movie_world)
+

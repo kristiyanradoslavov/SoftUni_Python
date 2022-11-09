@@ -4,7 +4,7 @@ class DVD:
         self.id = id
         self.creation_year = creation_year
         self.creation_month = creation_month
-        self.age_restrictions = age_restriction
+        self.age_restriction = age_restriction
         self.is_rented = False
 
     @classmethod
@@ -15,4 +15,4 @@ class DVD:
     def __repr__(self):
         status = "rented" if self.is_rented else "not rented"
         return f"{self.id}: {self.name} ({self.creation_month} {self.creation_year}) " \
-               f"has age restriction {self.age_restrictions}. Status: {status}"
+               f"has age restriction {self.age_restriction}. Status: {status}"
