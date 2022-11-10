@@ -1,5 +1,5 @@
-from project.customer import Customer
-from project.dvd import DVD
+from OOP.static_and_class_methods.static_and_class_methods_exercise.project_movie_world.customer import Customer
+from OOP.static_and_class_methods.static_and_class_methods_exercise.project_movie_world.dvd import DVD
 
 
 class MovieWorld:
@@ -27,6 +27,7 @@ class MovieWorld:
     def rent_dvd(self, customer_id, dvd_id):
         current_customer = [c for c in self.customers if c.id == customer_id][0]
         current_dvd = [d for d in self.dvds if d.id == dvd_id][0]
+
         if current_dvd in current_customer.rented_dvds:
             return f"{current_customer.name} has already rented {current_dvd.name}"
 
@@ -47,8 +48,9 @@ class MovieWorld:
         current_dvd = [d for d in self.dvds if d.id == dvd_id][0]
         if current_dvd in current_customer.rented_dvds:
             current_customer.rented_dvds.remove(current_dvd)
+            current_dvd.is_rented = False
             # self.dvds.append(current_dvd)
-            return f"{current_customer.name} has successfully rented {current_dvd.name}"
+            return f"{current_customer.name} has successfully returned {current_dvd.name}"
 
         else:
             return f"{current_customer.name} does not have that DVD"
@@ -63,24 +65,4 @@ class MovieWorld:
 
         return "\n".join(result)
 
-
-c1 = Customer("John", 16, 1)
-c2 = Customer("Anna", 55, 2)
-
-d1 = DVD("Black Widow", 1, 2020, "April", 18)
-d2 = DVD.from_date(2, "The Croods 2", "23.12.2020", 3)
-
-movie_world = MovieWorld("The Best Movie Shop")
-
-movie_world.add_customer(c1)
-movie_world.add_customer(c2)
-
-movie_world.add_dvd(d1)
-movie_world.add_dvd(d2)
-
-print(movie_world.rent_dvd(1, 1))
-print(movie_world.rent_dvd(2, 1))
-print(movie_world.rent_dvd(1, 2))
-
-print(movie_world)
 
