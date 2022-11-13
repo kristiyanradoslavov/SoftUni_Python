@@ -1,5 +1,5 @@
-from project.animals.animal import Mammal
-from project.food import *
+from OOP.polymorphism_and_abstraction.polymorphism_and_abstraction_exercise.project_wild_farm.animals.animal import Mammal
+from OOP.polymorphism_and_abstraction.polymorphism_and_abstraction_exercise.project_wild_farm.food import *
 
 
 class Mouse(Mammal):

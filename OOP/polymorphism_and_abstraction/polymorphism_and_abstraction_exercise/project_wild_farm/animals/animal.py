@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from project.food import Food
+from OOP.polymorphism_and_abstraction.polymorphism_and_abstraction_exercise.project_wild_farm.food import Food
 
 
 class Animal(ABC):
@@ -32,7 +32,7 @@ class Animal(ABC):
 
 
 class Bird(Animal, ABC):
-    @abstractmethod
+
     def __init__(self, name, weight, wing_size):
         super().__init__(name, weight)
 
@@ -43,7 +43,7 @@ class Bird(Animal, ABC):
 
 
 class Mammal(Animal, ABC):
-    @abstractmethod
+
     def __init__(self, name, weight, living_region):
         super().__init__(name, weight)
 
