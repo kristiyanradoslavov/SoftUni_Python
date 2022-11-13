@@ -1,4 +1,4 @@
-from project.cat import Cat
+from OOP.polymorphism_and_abstraction.polymorphism_and_abstraction_exercise.project_animals.cat import Cat
 
 
 class Tomcat(Cat):

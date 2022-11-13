@@ -1,4 +1,4 @@
-from project.animal import Animal
+from OOP.polymorphism_and_abstraction.polymorphism_and_abstraction_exercise.project_animals.animal import Animal
 
 
 class Cat(Animal):
