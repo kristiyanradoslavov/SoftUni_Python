@@ -50,5 +50,3 @@ truck.drive(5)
 print(truck.fuel_quantity)
 truck.refuel(50)
 print(truck.fuel_quantity)
-
-
