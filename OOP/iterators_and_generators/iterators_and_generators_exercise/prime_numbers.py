@@ -11,5 +11,4 @@ def get_primes(nums):
             yield current_num
 
 
-
 print(list(get_primes([-2, 0, 0, 1, 1, 0])))
