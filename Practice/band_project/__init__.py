@@ -1,6 +1,6 @@
-# from project.album import Album
-# from project.band import Band
-# from project.song import Song
+# from band_project.album import Album
+# from band_project.band import Band
+# from band_project.song import Song
 #
 # song = Song("Running in the 90s", 3.45, False)
 # print(song.get_info())

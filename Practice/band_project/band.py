@@ -1,5 +1,4 @@
-from project.album import Album
-from project.song import Song
+from Practice.band_project.album import Album
 
 
 class Band:
