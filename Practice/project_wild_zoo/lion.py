@@ -1,4 +1,4 @@
-from project.animal import Animal
+from Practice.project_wild_zoo.animal import Animal
 
 
 class Lion(Animal):

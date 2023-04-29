@@ -1,10 +1,10 @@
-from project.caretaker import Caretaker
-from project.cheetah import Cheetah
-from project.keeper import Keeper
-from project.lion import Lion
-from project.tiger import Tiger
-from project.vet import Vet
-from project.zoo import Zoo
+from Practice.project_wild_zoo.caretaker import Caretaker
+from Practice.project_wild_zoo.cheetah import Cheetah
+from Practice.project_wild_zoo.keeper import Keeper
+from Practice.project_wild_zoo.lion import Lion
+from Practice.project_wild_zoo.tiger import Tiger
+from Practice.project_wild_zoo.vet import Vet
+from Practice.project_wild_zoo.zoo import Zoo
 
 if __name__ == '__main__':
 
