@@ -1,7 +1,7 @@
 if __name__ == '__main__':
-    from project.dough import Dough
-    from project.pizza import Pizza
-    from project.topping import Topping
+    from Practice.project_pizza.dough import Dough
+    from Practice.project_pizza.pizza import Pizza
+    from Practice.project_pizza.topping import Topping
 
     tomato_topping = Topping("Tomato", 60)
     print(tomato_topping.topping_type)
