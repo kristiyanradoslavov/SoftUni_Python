@@ -49,3 +49,10 @@ class Truck(Vehicle, ABC):
     def refuel(self, fuel):
         remaining_fuel = fuel * 0.95
         self.fuel_quantity += remaining_fuel
+
+
+truck = Truck(100, 15)
+truck.drive(5)
+print(truck.fuel_quantity)
+truck.refuel(50)
+print(truck.fuel_quantity)
