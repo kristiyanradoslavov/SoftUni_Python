@@ -18,14 +18,28 @@ class Group:
         self.people = people
 
     def __len__(self):
-        return self.people
+        return len(self.people)
 
     def __add__(self, other):
         name = f"{self.name} {other.name}"
         first_people = self.people
         second_people = other.people
         first_people.extend(second_people)
-        return first_people
+        new_group = Group(name, first_people)
+
+        return new_group
+
+    def __repr__(self):
+        return f"Group {self.name} with members {', '.join(self.people)}"
+
+
+    def __iter__(self):
+        pass
+
+
+    def __next__(self):
+        pass
+
 
 
 p0 = Person('Aliko', 'Dangote')
