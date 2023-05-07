@@ -16,6 +16,7 @@ class Group:
     def __init__(self, name, people):
         self.name = name
         self.people = people
+        self.current_index = 0
 
     def __len__(self):
         return len(self.people)
@@ -30,16 +31,19 @@ class Group:
         return new_group
 
     def __repr__(self):
+        print(self.people)
         return f"Group {self.name} with members {', '.join(self.people)}"
 
-
     def __iter__(self):
-        pass
-
+        return self
 
     def __next__(self):
-        pass
+        if self.current_index < len(self.people):
+            self.current_index += 1
+            return f"Person {self.current_index - 1}: {self.people[self.current_index - 1]}"
 
+        else:
+            raise StopIteration
 
 
 p0 = Person('Aliko', 'Dangote')
@@ -50,4 +54,8 @@ p4 = p2 + p3
 first_group = Group('__VIP__', [p0, p1, p2])
 second_group = Group('Special', [p3, p4])
 third_group = first_group + second_group
-print(third_group)
+print(len(first_group))
+print(second_group)
+print(third_group[0])
+for person in third_group:
+ print(person)
