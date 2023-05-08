@@ -8,7 +8,8 @@ class Person:
         return f"{self.name} {self.surname}"
 
     def __add__(self, other):
-        return f"{self.name} {other.surname}"
+        new_person = Person(self.name, other.surname)
+        return new_person
 
 
 class Group:
@@ -31,19 +32,10 @@ class Group:
         return new_group
 
     def __repr__(self):
-        print(self.people)
-        return f"Group {self.name} with members {', '.join(self.people)}"
+        return f"Group {self.name} with members {', '.join(map(str, self.people))}"
 
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.current_index < len(self.people):
-            self.current_index += 1
-            return f"Person {self.current_index - 1}: {self.people[self.current_index - 1]}"
-
-        else:
-            raise StopIteration
+    def __getitem__(self, item):
+        return f"Person {item}: {self.people[item]}"
 
 
 p0 = Person('Aliko', 'Dangote')
